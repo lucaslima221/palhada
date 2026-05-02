@@ -125,14 +125,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section-page {
@@ -193,16 +187,26 @@
             border-radius: 2px;
         }
 
-        /* HERO (HOME) */
+        /* HERO COM FOTO */
         .hero {
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #f8fafc 100%);
+            background: url('https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             text-align: center;
             padding: 100px 20px 50px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.8) 100%);
         }
 
         .hero-content {
@@ -213,14 +217,16 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            color: #2563eb;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #fff;
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.9rem;
             letter-spacing: 1px;
             margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hero-title {
@@ -229,17 +235,17 @@
             letter-spacing: -2px;
             line-height: 1.1;
             margin-bottom: 1rem;
-            color: #0f172a;
+            color: #fff;
         }
 
         .hero-title span {
-            color: #2563eb;
+            color: #60a5fa;
         }
 
         .hero-subtitle {
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             font-weight: 400;
-            color: #475569;
+            color: #cbd5e1;
             margin-bottom: 2.5rem;
             line-height: 1.6;
         }
@@ -279,17 +285,17 @@
 
         .btn-outline {
             background: transparent;
-            color: #2563eb;
-            border-color: #2563eb;
+            color: #fff;
+            border-color: rgba(255,255,255,0.6);
         }
 
         .btn-outline:hover {
-            background: #2563eb;
-            color: #fff;
+            background: #fff;
+            color: #1e3a8a;
             transform: translateY(-3px);
         }
 
-        /* DIRETRIZES - SEÇÃO NOVA DESTACADA */
+        /* DIRETRIZES COM FOTOS */
         .diretrizes-section {
             padding: 5rem 20px;
             background: #ffffff;
@@ -325,59 +331,54 @@
 
         .diretriz-card {
             text-align: center;
-            padding: 2.5rem 1.8rem;
             border-radius: 20px;
-            background: #f8fafc;
+            background: #ffffff;
             border: 1px solid #e2e8f0;
             transition: all 0.4s ease;
-            position: relative;
             overflow: hidden;
-        }
-
-        .diretriz-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #2563eb;
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
 
         .diretriz-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border-color: #2563eb;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .diretriz-card:hover::before {
-            transform: scaleX(1);
+        .diretriz-card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .diretriz-card-body {
+            padding: 1.8rem;
         }
 
         .diretriz-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: #eff6ff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: -50px auto 1rem;
+            position: relative;
+            z-index: 2;
             color: #2563eb;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
         }
 
         .diretriz-card:hover .diretriz-icon {
             background: #2563eb;
-            color: #ffffff;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            color: #fff;
         }
 
         .diretriz-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
             color: #0f172a;
@@ -389,94 +390,243 @@
             line-height: 1.7;
         }
 
-        /* INFO HOME */
-        .info-row {
+        /* INFO COM FOTOS */
+        .info-section-home {
+            padding: 5rem 20px;
+            background: #f1f5f9;
+        }
+
+        .info-grid-imgs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .info-block {
-            text-align: left;
-            padding: 1rem 0;
+        .info-card-img {
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
 
-        .info-block i {
-            font-size: 2rem;
-            color: #2563eb;
-            margin-bottom: 1rem;
+        .info-card-img:hover {
+            transform: translateY(-8px);
         }
 
-        .info-block h3 {
-            font-size: 1.3rem;
+        .info-card-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .info-card-img .info-text {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .info-card-img .info-text h3 {
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #0f172a;
         }
 
-        .info-block p {
+        .info-card-img .info-text p {
             color: #475569;
-            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
-        .highlight-link {
-            color: #2563eb;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .highlight-link:hover {
-            text-decoration: underline;
-        }
-
-        /* SOBRE NÓS */
-        .about-grid {
+        /* SOBRE NÓS - PASTOR + LINHA DO TEMPO */
+        .pastor-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 4rem;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
         }
 
-        .about-text-lg {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: #334155;
+        .pastor-foto {
+            width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .about-text-lg p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-highlights {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-
-        .highlight-item i {
-            font-size: 2.5rem;
-            color: #2563eb;
-            flex-shrink: 0;
-        }
-
-        .highlight-item h4 {
-            font-size: 1.2rem;
+        .pastor-info h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
             margin-bottom: 0.3rem;
             color: #0f172a;
         }
 
-        .highlight-item p {
+        .pastor-info .cargo {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .pastor-info p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .pastor-redes {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .pastor-redes a {
+            color: #64748b;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .pastor-redes a:hover {
+            color: #2563eb;
+        }
+
+        /* LINHA DO TEMPO */
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #e2e8f0;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.15rem;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #2563eb;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #2563eb;
+            z-index: 2;
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: #2563eb;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item h4 {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* LINKTREE */
+        .linktree-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .linktree-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .linktree-item i {
+            font-size: 1.5rem;
+            color: #2563eb;
+            width: 30px;
+            text-align: center;
+        }
+
+        .linktree-item span {
+            flex: 1;
+        }
+
+        .linktree-item .arrow {
+            color: #94a3b8;
+            transition: transform 0.3s;
+        }
+
+        .linktree-item:hover {
+            border-color: #2563eb;
+            transform: translateX(6px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1);
+        }
+
+        .linktree-item:hover .arrow {
+            transform: translateX(5px);
+            color: #2563eb;
+        }
+
+        .linktree-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .linktree-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid #2563eb;
+        }
+
+        .linktree-header h3 {
+            font-weight: 800;
+        }
+
+        .linktree-header p {
             color: #64748b;
         }
 
-        /* MINISTÉRIOS */
+        /* MINISTÉRIOS, EVENTOS, CONTATOS MANTIDOS */
         .ministry-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -513,7 +663,6 @@
             margin-top: 0.5rem;
         }
 
-        /* EVENTOS */
         .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -582,7 +731,6 @@
             font-weight: 600;
         }
 
-        /* CONTATOS */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -636,7 +784,7 @@
             color: #2563eb;
         }
 
-        /* RODAPÉ */
+          /* RODAPÉ */
         .footer {
             background: #0f172a;
             color: #cbd5e1;
@@ -717,10 +865,19 @@
             .mobile-menu-btn {
                 display: block;
             }
-            .about-grid,
+            .pastor-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .pastor-foto {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            .pastor-redes {
+                justify-content: center;
+            }
             .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
         }
     </style>
@@ -741,6 +898,7 @@
                 <li><a href="#" onclick="switchTab('ministerio')" data-tab="ministerio">Ministérios</a></li>
                 <li><a href="#" onclick="switchTab('eventos')" data-tab="eventos">Eventos</a></li>
                 <li><a href="#" onclick="switchTab('contatos')" data-tab="contatos">Contatos</a></li>
+                <li><a href="#" onclick="switchTab('linktree')" data-tab="linktree">Links</a></li>
             </ul>
         </div>
     </nav>
@@ -754,12 +912,11 @@
                 <p class="hero-subtitle">Uma comunidade acolhedora dedicada à palavra de Deus, à comunhão fraterna e ao serviço ao próximo desde 2010.</p>
                 <div class="btn-group">
                     <a href="#" onclick="switchTab('eventos')" class="btn btn-primary">Nossos Eventos</a>
-                    <a href="#" onclick="switchTab('contatos')" class="btn btn-outline">Fale Conosco</a>
+                    <a href="#" onclick="switchTab('linktree')" class="btn btn-outline">Nossos Links</a>
                 </div>
             </div>
         </section>
 
-        <!-- DIRETRIZES EM DESTAQUE -->
         <section class="diretrizes-section">
             <div class="container">
                 <div class="diretrizes-header">
@@ -768,58 +925,68 @@
                 </div>
                 <div class="diretrizes-grid">
                     <div class="diretriz-card">
-                        <div class="diretriz-icon">
-                            <i class="fas fa-heart"></i>
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Amar e Acolher" class="diretriz-card-img">
+                        <div class="diretriz-card-body">
+                            <div class="diretriz-icon"><i class="fas fa-heart"></i></div>
+                            <h3>Amar e Acolher</h3>
+                            <p>Recebemos cada pessoa com o amor de Cristo, sem julgamentos, oferecendo um ambiente de aceitação, cuidado e respeito.</p>
                         </div>
-                        <h3>Amar e Acolher</h3>
-                        <p>Recebemos cada pessoa com o amor de Cristo, sem julgamentos, oferecendo um ambiente de aceitação, cuidado e respeito. Aqui, todos encontram um lar espiritual.</p>
                     </div>
                     <div class="diretriz-card">
-                        <div class="diretriz-icon">
-                            <i class="fas fa-people-arrows"></i>
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Caminhar Junto" class="diretriz-card-img">
+                        <div class="diretriz-card-body">
+                            <div class="diretriz-icon"><i class="fas fa-people-arrows"></i></div>
+                            <h3>Caminhar Junto</h3>
+                            <p>Através da comunhão, do apoio mútuo e da amizade cristã, crescemos juntos na fé e enfrentamos os desafios da vida.</p>
                         </div>
-                        <h3>Caminhar Junto</h3>
-                        <p>Acreditamos que ninguém caminha sozinho. Através da comunhão, do apoio mútuo e da amizade cristã, crescemos juntos na fé e enfrentamos os desafios da vida.</p>
                     </div>
                     <div class="diretriz-card">
-                        <div class="diretriz-icon">
-                            <i class="fas fa-link"></i>
+                        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Conectar Pessoas" class="diretriz-card-img">
+                        <div class="diretriz-card-body">
+                            <div class="diretriz-icon"><i class="fas fa-link"></i></div>
+                            <h3>Conectar Pessoas</h3>
+                            <p>Construímos pontes entre indivíduos, famílias e a comunidade, promovendo relacionamentos saudáveis.</p>
                         </div>
-                        <h3>Conectar Pessoas</h3>
-                        <p>Construímos pontes entre indivíduos, famílias e a comunidade. Promovemos relacionamentos saudáveis que refletem o propósito de Deus para a unidade do Corpo de Cristo.</p>
                     </div>
                     <div class="diretriz-card">
-                        <div class="diretriz-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                        <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Formar Discípulos" class="diretriz-card-img">
+                        <div class="diretriz-card-body">
+                            <div class="diretriz-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>Formar Discípulos</h3>
+                            <p>Investimos no ensino da Palavra e no desenvolvimento espiritual de cada membro para cumprir a missão.</p>
                         </div>
-                        <h3>Formar Discípulos</h3>
-                        <p>Investimos no ensino da Palavra e no desenvolvimento espiritual de cada membro, capacitando-os para cumprir a missão de fazer discípulos em todas as nações.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- INFORMAÇÕES RÁPIDAS -->
-        <section style="padding: 5rem 20px; background: #f1f5f9;">
+        <section class="info-section-home">
             <div class="container">
-                <div class="info-row">
-                    <div class="info-block">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Nosso Endereço</h3>
-                        <p>Rua Velho Cassiano, 132<br>Bairro Amassa<br>São Paulo - SP</p>
-                        <a href="#" class="highlight-link">Ver no mapa →</a>
+                <div class="diretrizes-header">
+                    <h2>Nossa Comunidade</h2>
+                    <p>Momentos de fé, união e serviço</p>
+                </div>
+                <div class="info-grid-imgs">
+                    <div class="info-card-img">
+                        <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Culto">
+                        <div class="info-text">
+                            <h3>Cultos Abençoados</h3>
+                            <p>Domingos às 19h e Quartas às 20h</p>
+                        </div>
                     </div>
-                    <div class="info-block">
-                        <i class="fas fa-clock"></i>
-                        <h3>Horários de Culto</h3>
-                        <p><strong>Domingos:</strong> 19h - Culto da Família<br><strong>Quartas-feiras:</strong> 20h - Estudo Bíblico</p>
-                        <a href="#" onclick="switchTab('eventos')" class="highlight-link">Ver todos os eventos →</a>
+                    <div class="info-card-img">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Comunidade">
+                        <div class="info-text">
+                            <h3>Comunhão Verdadeira</h3>
+                            <p>Mais de 500 membros ativos</p>
+                        </div>
                     </div>
-                    <div class="info-block">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <h3>Dízimos & Ofertas</h3>
-                        <p>Sua contribuição fortalece nossa missão.<br><strong>PIX:</strong> 132.132.132-00</p>
-                        <a href="#" class="highlight-link">Contribuir agora →</a>
+                    <div class="info-card-img">
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ação Social">
+                        <div class="info-text">
+                            <h3>Ação Social Ativa</h3>
+                            <p>Servindo o bairro Amassa com amor</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -832,35 +999,56 @@
             <div class="container">
                 <h2 class="section-title">Sobre <span>Nós</span></h2>
                 <div class="divider"></div>
-                <p class="section-subtitle">Conheça nossa história e missão</p>
-                <div class="about-grid">
-                    <div class="about-text-lg">
-                        <p>A <strong>Igreja da Palhada</strong> foi fundada em 2010, na Rua Velho Cassiano, 132, por um pequeno grupo de irmãos com o desejo de criar uma comunidade fundamentada na Palavra de Deus.</p>
-                        <p>Desde o início, nosso propósito tem sido claro: <strong>amar a Deus sobre todas as coisas e ao próximo como a nós mesmos</strong>. Crescemos organicamente, guiados pela fé e pelo compromisso com a verdade bíblica.</p>
-                        <p>Hoje, somos mais de <strong>500 membros ativos</strong>, com cultos vibrantes, ministérios dedicados e uma forte atuação social no bairro e região.</p>
+                <p class="section-subtitle">Conheça nossa história e nosso pastor</p>
+
+                <!-- PASTOR -->
+                <div class="pastor-section">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pastor José da Silva" class="pastor-foto">
+                    <div class="pastor-info">
+                        <h3>Pastor José da Silva</h3>
+                        <span class="cargo">Pastor Presidente</span>
+                        <p>O Pastor José está à frente da Igreja da Palhada desde sua fundação, em 2010. Formado em Teologia pelo Seminário Batista e com mais de 25 anos de ministério pastoral, ele tem conduzido nossa comunidade com sabedoria, amor e dedicação à Palavra de Deus.</p>
+                        <p>Casado com a irmã Maria há 30 anos, pai de três filhos e avô dedicado, o Pastor José é conhecido por sua pregação calorosa, seu coração acolhedor e sua visão de uma igreja que verdadeiramente transforma vidas. Seu lema é: <em>"Uma igreja que não serve, não serve para nada."</em></p>
+                        <div class="pastor-redes">
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-bible"></i>
-                            <div>
-                                <h4>Nossa Missão</h4>
-                                <p>Proclamar o Evangelho e fazer discípulos, vivendo em comunhão e servindo com amor.</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-heart"></i>
-                            <div>
-                                <h4>Nossos Valores</h4>
-                                <p>Fé genuína, integridade, compaixão e compromisso com a família e a comunidade.</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-globe-americas"></i>
-                            <div>
-                                <h4>Nossa Visão</h4>
-                                <p>Ser uma igreja relevante, que impacta vidas e transforma realidades pelo poder de Deus.</p>
-                            </div>
-                        </div>
+                </div>
+
+                <!-- LINHA DO TEMPO -->
+                <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 2rem; color: #0f172a;">Nossa Trajetória</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2010</div>
+                        <h4>Fundação da Igreja da Palhada</h4>
+                        <p>O Pastor José reúne as primeiras 20 famílias na Rua Velho Cassiano, 132, e realiza o primeiro culto oficial.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2013</div>
+                        <h4>Inauguração do Templo</h4>
+                        <p>Após anos de oração e contribuições, inauguramos nosso templo com capacidade para 300 pessoas.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2016</div>
+                        <h4>Início da Ação Social</h4>
+                        <p>Lançamos o programa "Mãos Solidárias", distribuindo cestas básicas e oferecendo assistência espiritual à comunidade.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019</div>
+                        <h4>Expansão dos Ministérios</h4>
+                        <p>Criação dos ministérios de Jovens, Infantil e Pequenos Grupos, ampliando nosso alcance.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <h4>500 Membros</h4>
+                        <p>Alcançamos a marca de 500 membros ativos e continuamos crescendo na graça e no conhecimento.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <h4>Novos Projetos</h4>
+                        <p>Lançamento da Conferência de Jovens anual e expansão das Células para mais bairros.</p>
                     </div>
                 </div>
             </div>
@@ -919,68 +1107,56 @@
                 <p class="section-subtitle">Participe das nossas atividades e cresça em comunhão</p>
                 <div class="events-grid">
                     <div class="event-card">
-                        <div class="event-image">
-                            <i class="fas fa-pray"></i>
-                        </div>
+                        <div class="event-image"><i class="fas fa-pray"></i></div>
                         <div class="event-info">
                             <div class="event-date">Todo Domingo | 19h</div>
                             <h3>Culto da Família</h3>
-                            <p>Celebração semanal com louvor, oração e mensagem bíblica para toda a família. Traga seus familiares e amigos!</p>
+                            <p>Celebração semanal com louvor, oração e mensagem bíblica para toda a família.</p>
                             <span class="event-tag">Culto Principal</span>
                         </div>
                     </div>
                     <div class="event-card">
-                        <div class="event-image">
-                            <i class="fas fa-book-open"></i>
-                        </div>
+                        <div class="event-image"><i class="fas fa-book-open"></i></div>
                         <div class="event-info">
                             <div class="event-date">Toda Quarta | 20h</div>
                             <h3>Estudo Bíblico</h3>
-                            <p>Momento de aprofundamento na Palavra de Deus, com estudo sistemático dos livros bíblicos e aplicação prática para a vida.</p>
+                            <p>Momento de aprofundamento na Palavra de Deus com estudo sistemático dos livros bíblicos.</p>
                             <span class="event-tag">Ensino</span>
                         </div>
                     </div>
                     <div class="event-card">
-                        <div class="event-image">
-                            <i class="fas fa-users"></i>
-                        </div>
+                        <div class="event-image"><i class="fas fa-users"></i></div>
                         <div class="event-info">
                             <div class="event-date">15 de Abril | 19h30</div>
                             <h3>Conferência de Jovens</h3>
-                            <p>Encontro especial para a juventude com louvor, palestras e momentos de comunhão. Tema: "Vivendo com Propósito".</p>
+                            <p>Encontro especial para a juventude com louvor, palestras e momentos de comunhão.</p>
                             <span class="event-tag">Juventude</span>
                         </div>
                     </div>
                     <div class="event-card">
-                        <div class="event-image">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
+                        <div class="event-image"><i class="fas fa-hand-holding-heart"></i></div>
                         <div class="event-info">
                             <div class="event-date">22 de Abril | 9h</div>
                             <h3>Ação Social no Bairro</h3>
-                            <p>Distribuição de cestas básicas, roupas e atendimento espiritual para as famílias do bairro Amassa. Seja um voluntário!</p>
+                            <p>Distribuição de cestas básicas, roupas e atendimento espiritual para as famílias.</p>
                             <span class="event-tag">Social</span>
                         </div>
                     </div>
                     <div class="event-card">
-                        <div class="event-image">
-                            <i class="fas fa-drum"></i>
-                        </div>
+                        <div class="event-image"><i class="fas fa-drum"></i></div>
                         <div class="event-info">
                             <div class="event-date">29 de Abril | 19h</div>
                             <h3>Noite de Louvor</h3>
-                            <p>Uma noite inteira dedicada ao louvor e à adoração, com a participação de toda a equipe de música da igreja.</p>
+                            <p>Uma noite inteira dedicada ao louvor e à adoração com toda a equipe de música da igreja.</p>
                             <span class="event-tag">Louvor</span>
                         </div>
                     </div>
                     <div class="event-card">
-                        <div class="event-image">
-                            <i class="fas fa-ring"></i>
-                        </div>
+                        <div class="event-image"><i class="fas fa-ring"></i></div>
                         <div class="event-info">
                             <div class="event-date">06 de Maio | 10h</div>
                             <h3>Encontro de Casais</h3>
-                            <p>Evento especial para casais, com palestras, dinâmicas e momentos de oração para fortalecer os relacionamentos.</p>
+                            <p>Evento especial para casais com palestras, dinâmicas e momentos de oração.</p>
                             <span class="event-tag">Família</span>
                         </div>
                     </div>
@@ -1009,32 +1185,22 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>Telefone</h4>
-                                <p>(11) 99999-9999<br>Segunda a Sexta: 9h às 18h</p>
+                                <p>(11) 99999-9999</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>E-mail</h4>
-                                <p>contato@igrejadapalhada.com.br<br>secretaria@igrejadapalhada.com.br</p>
+                                <p>contato@igrejadapalhada.com.br</p>
                             </div>
                         </div>
-                        <div class="contact-info-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Horário de Funcionamento</h4>
-                                <p>Terça a Domingo: 9h às 21h<br>Segunda: Fechado</p>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 0.5rem; color: #0f172a;">Redes Sociais</h4>
-                            <div class="social-links">
-                                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                                <a href="#" title="Spotify"><i class="fab fa-spotify"></i></a>
-                                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                            </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-spotify"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div style="background: #f8fafc; padding: 2rem; border-radius: 16px;">
@@ -1043,7 +1209,7 @@
                             <input type="text" placeholder="Seu nome" style="padding: 0.8rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'Inter', sans-serif;">
                             <input type="email" placeholder="Seu e-mail" style="padding: 0.8rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'Inter', sans-serif;">
                             <textarea rows="4" placeholder="Sua mensagem" style="padding: 0.8rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'Inter', sans-serif;"></textarea>
-                            <button type="button" class="btn btn-primary" style="width: 100%; cursor: pointer;">Enviar Mensagem</button>
+                            <button type="button" class="btn btn-primary" style="width: 100%;">Enviar</button>
                         </form>
                     </div>
                 </div>
@@ -1051,7 +1217,61 @@
         </section>
     </div>
 
-    <!-- RODAPÉ -->
+    <!-- ABA LINKTREE (ÁRVORE DE LINKS) -->
+    <div id="linktree" class="tab-content">
+        <section class="section-page section-alt">
+            <div class="container">
+                <div class="linktree-header">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Logo" class="linktree-avatar">
+                    <h3>Igreja da Palhada</h3>
+                    <p>Todos os nossos links em um só lugar</p>
+                </div>
+                <div class="linktree-container">
+                    <a href="#" class="linktree-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram @igrejadapalhada</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                    <a href="#" class="linktree-item">
+                        <i class="fab fa-youtube"></i>
+                        <span>Canal no YouTube</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                    <a href="#" class="linktree-item">
+                        <i class="fab fa-facebook"></i>
+                        <span>Página no Facebook</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                    <a href="#" class="linktree-item">
+                        <i class="fab fa-spotify"></i>
+                        <span>Playlist de Louvores</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                    <a href="#" class="linktree-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Grupo de Oração (WhatsApp)</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                    <a href="#" class="linktree-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Como Chegar (Google Maps)</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                    <a href="#" class="linktree-item">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>Dízimos e Ofertas (PIX)</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                    <a href="#" class="linktree-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Agenda de Eventos</span>
+                        <i class="fas fa-arrow-right arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -1065,7 +1285,7 @@
                     <li><a href="#" onclick="switchTab('sobre')">Sobre Nós</a></li>
                     <li><a href="#" onclick="switchTab('ministerio')">Ministérios</a></li>
                     <li><a href="#" onclick="switchTab('eventos')">Eventos</a></li>
-                    <li><a href="#" onclick="switchTab('contatos')">Contatos</a></li>
+                    <li><a href="#" onclick="switchTab('linktree')">Árvore de Links</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1082,50 +1302,34 @@
                     <li>Domingo: 19h</li>
                     <li>Quarta-feira: 20h</li>
                     <li>Terça a Domingo: 9h às 21h</li>
-                    <li>Segunda: Fechado</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Igreja da Palhada. Todos os direitos reservados.</p>
-            <p>Rua Velho Cassiano, 132 - Bairro Amassa - São Paulo/SP | CNPJ: 12.345.678/0001-99</p>
+            <p>&copy; 2024 Igreja da Palhada. Todos os direitos reservados. | Rua Velho Cassiano, 132 - São Paulo/SP | CNPJ: 12.345.678/0001-99</p>
         </div>
     </footer>
 
     <script>
         function switchTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             const activeTab = document.getElementById(tabName);
-            if (activeTab) {
-                activeTab.classList.add('active');
-            }
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-            });
+            if (activeTab) activeTab.classList.add('active');
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
             const activeLink = document.querySelector(`.nav-links a[data-tab="${tabName}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
+            if (activeLink) activeLink.classList.add('active');
             document.getElementById('navLinks').classList.remove('open');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
         });
 
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
     </script>
 </body>
-</html>
+                    </html>
