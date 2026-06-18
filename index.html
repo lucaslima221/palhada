@@ -791,114 +791,148 @@
                 <li><a href="#" onclick="switchTab('ministerio')" data-tab="ministerio">Ministérios</a></li>
                 <li><a href="#" onclick="switchTab('eventos')" data-tab="eventos">Eventos</a></li>
                 <li><a href="#" onclick="switchTab('contatos')" data-tab="contatos">Contatos</a></li>
-                <li><a href="#" onclick="switchTab('linktree')" data-tab="linktree">Links</a></li>
+                <!-- <li><a href="#" onclick="switchTab('linktree')" data-tab="linktree">Links</a></li> -->
             </ul>
         </div>
     </nav>
 
-    <!-- ABA HOME -->
-    <div id="home" class="tab-content active">
-        <!-- TARJA 16:9 REDUZIDA COM HORÁRIOS -->
-<!-- TARJA 16:9 REDUZIDA COM HORÁRIOS -->
-<!-- TARJA 16:9 REDUZIDA COM HORÁRIOS -->
-<div style="
-    width: 100%;
-    position: relative;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
-    overflow: hidden;
-    margin-top: 80px;
-    margin-bottom: 2rem;
-    aspect-ratio: 16 / 9;
-    max-height: 340px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius:  10rem 10rem 10rem 10rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-">
+<!-- ABA HOME -->
+<div id="home" class="tab-content active">
+    <!-- HERO COM IMAGEM 16:9 (mantido) -->
     <div style="
+        width: 100%;
         position: relative;
-        z-index: 2;
-        text-align: center;
-        padding: 1.5rem 1rem;
-        color: #fff;
-        max-width: 600px;
+        margin-top: 80px;
+        aspect-ratio: 12 / 5;
+        max-height: 500px;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     ">
-        <span style="
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 0.3rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        ">⛪ Junte-se a nós</span>
-        
+        <img src="fotos/Design sem nome (6).png" 
+             alt="Igreja da Palhada - Culto" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;">
         <div style="
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1.2rem;
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 70%, transparent 100%);
+            padding: 2rem 1.5rem 1.5rem;
+            display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem;
         ">
-            <!-- Domingo -->
-            <div style="
-                background: rgba(255,255,255,0.08);
-                backdrop-filter: blur(5px);
-                padding: 0.8rem 1.4rem;
-                border-radius: 0.8rem;
-                border: 1px solid rgba(255,255,255,0.2);
-                min-width: 160px;
-            ">
-                <i class="fas fa-church" style="font-size: 1.5rem; color: #facc15; display: block; margin-bottom: 0.3rem;"></i>
-                <div style="font-weight: 800; font-size: 1.1rem;">Domingo</div>
-                <div style="font-size: 0.95rem; color: #ddd;">09h <span style="margin:0 5px; color:#facc15;">•</span> 18h</div>
-            </div>
+         
+            <a href="#" onclick="switchTab('eventos'); return false;" style="
+                background: #2563eb; color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px;
+                font-weight: 700; font-size: 0.9rem; text-decoration: none; white-space: nowrap;
+                transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37,99,235,0.5);
+            " onmouseover="this.style.background='#1d4ed8'; this.style.transform='translateY(-2px)'" 
+               onmouseout="this.style.background='#2563eb'; this.style.transform='translateY(0)'">
+                <i class="fas fa-arrow-right" style="margin-right: 6px;"></i> Ver agenda
+            </a>
+        </div>
+    </div>
+
+    <!-- SLIDER DE PRÓXIMOS EVENTOS (FULL WIDTH, TROCA AUTOMÁTICA) -->
+    <div class="events-slider-section" style="margin: 3rem 0; position: relative; overflow: hidden; background: #f1f5f9; padding: 2rem 0;">
+        <div class="container" style="position: relative;">
+            <h3 style="
+                font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center;
+                color: #0f172a;
+            ">Próximos <span style="color: #2563eb;">Eventos</span></h3>
+            <div class="divider" style="margin-bottom: 2rem;"></div>
             
-            <!-- Quarta -->
-            <div style="
-                background: rgba(255,255,255,0.08);
-                backdrop-filter: blur(5px);
-                padding: 0.8rem 1.4rem;
-                border-radius: 0.8rem;
-                border: 1px solid rgba(255,255,255,0.2);
-                min-width: 160px;
-            ">
-                <i class="fas fa-pray" style="font-size: 1.5rem; color: #facc15; display: block; margin-bottom: 0.3rem;"></i>
-                <div style="font-weight: 800; font-size: 1.1rem;">Quarta-feira</div>
-                <div style="font-size: 0.95rem; color: #ddd;">20h</div>
+            <!-- Container dos slides -->
+            <div id="eventsSlider" style="position: relative; width: 100%; overflow: hidden; border-radius: 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.08);">
+                <div id="slidesTrack" style="display: flex; transition: transform 0.6s ease-in-out; will-change: transform;">
+                    <!-- Slide 1 -->
+                    <div class="slide" style="min-width: 100%; background: #fff; display: flex; flex-direction: column; align-items: center; padding: 2rem; box-sizing: border-box;">
+                        <div style="width: 100%; max-width: 600px; text-align: center;">
+                            <div style="height: 120px; background: linear-gradient(135deg, #2563eb, #3b82f6); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1.5rem;">
+                                <i class="fas fa-pray"></i>
+                            </div>
+                            <span style="color: #2563eb; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Todo Domingo | 19h</span>
+                            <h4 style="margin: 0.8rem 0; font-weight: 800; font-size: 1.6rem; color: #0f172a;">Culto da Família</h4>
+                            <p style="color: #475569; font-size: 1rem; line-height: 1.6;">Louvor, oração e mensagem bíblica para toda a família. Um momento de renovação espiritual e comunhão.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide" style="min-width: 100%; background: #fff; display: flex; flex-direction: column; align-items: center; padding: 2rem;">
+                        <div style="width: 100%; max-width: 600px; text-align: center;">
+                            <div style="height: 120px; background: linear-gradient(135deg, #0f172a, #1e3a5f); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1.5rem;">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <span style="color: #0f172a; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Toda Quarta | 20h</span>
+                            <h4 style="margin: 0.8rem 0; font-weight: 800; font-size: 1.6rem; color: #0f172a;">Estudo Bíblico</h4>
+                            <p style="color: #475569; font-size: 1rem; line-height: 1.6;">Aprofundamento na Palavra de Deus com estudo sistemático dos livros bíblicos. Aberto a todos.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide" style="min-width: 100%; background: #fff; display: flex; flex-direction: column; align-items: center; padding: 2rem;">
+                        <div style="width: 100%; max-width: 600px; text-align: center;">
+                            <div style="height: 120px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1.5rem;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <span style="color: #7c3aed; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">15 de Abril | 19h30</span>
+                            <h4 style="margin: 0.8rem 0; font-weight: 800; font-size: 1.6rem; color: #0f172a;">Conferência de Jovens</h4>
+                            <p style="color: #475569; font-size: 1rem; line-height: 1.6;">Encontro especial para a juventude com louvor, palestras e momentos de comunhão. Inscrições abertas!</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="slide" style="min-width: 100%; background: #fff; display: flex; flex-direction: column; align-items: center; padding: 2rem;">
+                        <div style="width: 100%; max-width: 600px; text-align: center;">
+                            <div style="height: 120px; background: linear-gradient(135deg, #059669, #34d399); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1.5rem;">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <span style="color: #059669; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">22 de Abril | 9h</span>
+                            <h4 style="margin: 0.8rem 0; font-weight: 800; font-size: 1.6rem; color: #0f172a;">Ação Social no Bairro</h4>
+                            <p style="color: #475569; font-size: 1rem; line-height: 1.6;">Distribuição de cestas básicas, roupas e atendimento espiritual para famílias carentes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles (setas) -->
+                <button id="prevSlide" style="
+                    position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+                    background: rgba(255,255,255,0.9); border: none; border-radius: 50%;
+                    width: 45px; height: 45px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    cursor: pointer; z-index: 10; font-size: 1.3rem; color: #2563eb;
+                    display: flex; align-items: center; justify-content: center;
+                    transition: all 0.3s;
+                " onmouseover="this.style.background='#2563eb'; this.style.color='white'" 
+                   onmouseout="this.style.background='rgba(255,255,255,0.9)'; this.style.color='#2563eb'">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextSlide" style="
+                    position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
+                    background: rgba(255,255,255,0.9); border: none; border-radius: 50%;
+                    width: 45px; height: 45px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    cursor: pointer; z-index: 10; font-size: 1.3rem; color: #2563eb;
+                    display: flex; align-items: center; justify-content: center;
+                    transition: all 0.3s;
+                " onmouseover="this.style.background='#2563eb'; this.style.color='white'" 
+                   onmouseout="this.style.background='rgba(255,255,255,0.9)'; this.style.color='#2563eb'">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicadores (bolinhas) -->
+                <div style="
+                    position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
+                    display: flex; gap: 0.5rem; z-index: 10;
+                ">
+                    <span class="dot" data-index="0" style="width: 10px; height: 10px; background: #2563eb; border-radius: 50%; cursor: pointer; opacity: 1;"></span>
+                    <span class="dot" data-index="1" style="width: 10px; height: 10px; background: #2563eb; border-radius: 50%; cursor: pointer; opacity: 0.4;"></span>
+                    <span class="dot" data-index="2" style="width: 10px; height: 10px; background: #2563eb; border-radius: 50%; cursor: pointer; opacity: 0.4;"></span>
+                    <span class="dot" data-index="3" style="width: 10px; height: 10px; background: #2563eb; border-radius: 50%; cursor: pointer; opacity: 0.4;"></span>
+                </div>
             </div>
         </div>
-        
-        <a href="#" onclick="switchTab('eventos'); return false;" style="
-            display: inline-block;
-            background: #2563eb;
-            color: #fff;
-            padding: 0.6rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(37,99,235,0.5);
-        " onmouseover="this.style.background='#1d4ed8'; this.style.transform='translateY(-2px)'" 
-           onmouseout="this.style.background='#2563eb'; this.style.transform='translateY(0)'">
-            <i class="fas fa-arrow-right" style="margin-right: 6px;"></i> Ver agenda completa
-        </a>
     </div>
-</div>
 
-        <section class="diretrizes-section">
+    <!-- DIRETRIZES (mantidas) -->
+    <section class="diretrizes-section">
+        
             <div class="container">
                 <div class="diretrizes-header">
-                    <h2>Nossas Diretrizes</h2>
-                    <p>Os pilares que sustentam nossa caminhada de fé e guiam todas as nossas ações como igreja</p>
+                    <h2>Nossa Essência</h2>
+                    <!-- <p>os pilares que sustentam nossa caminhada de fé e guiam todas as nossas ações como igreja</p> -->
                 </div>
                 <div class="diretrizes-grid">
                     <div class="diretriz-card">
@@ -937,7 +971,7 @@
             </div>
         </section>
 
-        <section class="info-section-home">
+        <!-- <section class="info-section-home">
             <div class="container">
                 <div class="diretrizes-header">
                     <h2>Nossa Comunidade</h2>
@@ -967,7 +1001,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 
     <!-- ABA SOBRE NÓS -->
@@ -1023,7 +1057,7 @@
                             O nome "Palhada" veio do próprio bairro, uma forma de honrar nossas raízes e mostrar que Deus escolhe as coisas simples para confundir as fortes. O primeiro banco foi doado, o primeiro louvor foi cantado à capela, e a primeira oferta foi um pão que alimentou uma família necessitada.
                         </p>
                         <p style="margin-bottom: 0;">
-                            De 2010 para cá, já celebramos mais de 500 batismos, realizamos dezenas de casamentos, restauramos famílias e vimos o agir de Deus em cada detalhe. Hoje, somos uma igreja viva, pulsante, que continua escrevendo sua história com as mesmas bases do início: fé, amor e serviço.
+                            De 19** para cá, já celebramos mais de 500 batismos, realizamos dezenas de casamentos, restauramos famílias e vimos o agir de Deus em cada detalhe. Hoje, somos uma igreja viva, pulsante, que continua escrevendo sua história com as mesmas bases do início: fé, amor e serviço.
                         </p>
                     </div>
                 </div>
@@ -1145,32 +1179,32 @@
                     <div class="ministry-item">
                         <h3>Louvor e Adoração</h3>
                         <p>Equipe dedicada a conduzir a igreja à presença de Deus através da música e do canto congregacional.</p>
-                        <p class="schedule">Ensaios: Sábados às 15h</p>
+                        <!-- <p class="schedule">Ensaios: Sábados às 15h</p> -->
                     </div>
                     <div class="ministry-item">
                         <h3>Ministério Infantil</h3>
                         <p>Acolhemos e ensinamos as crianças no caminho do Senhor com atividades lúdicas e ensino bíblico adaptado.</p>
-                        <p class="schedule">Domingos às 10h</p>
+                        <!-- <p class="schedule">Domingos às 10h</p> -->
                     </div>
                     <div class="ministry-item">
                         <h3>Jovens</h3>
                         <p>Grupo voltado para a juventude, com encontros dinâmicos, estudos relevantes e atividades de integração.</p>
-                        <p class="schedule">Sextas-feiras às 20h</p>
+                        <!-- <p class="schedule">Sextas-feiras às 20h</p> -->
                     </div>
                     <div class="ministry-item">
                         <h3>Ação Social</h3>
                         <p>Distribuição de alimentos, roupas e assistência espiritual para famílias em situação de vulnerabilidade.</p>
-                        <p class="schedule">Quartas-feiras às 14h</p>
+                        <!-- <p class="schedule">Quartas-feiras às 14h</p> -->
                     </div>
-                    <div class="ministry-item">
+                    <!-- <div class="ministry-item">
                         <h3>Pequenos Grupos</h3>
                         <p>Células de estudo bíblico e comunhão nos lares, fortalecendo os vínculos e o crescimento espiritual.</p>
                         <p class="schedule">Terças e Quintas-feiras</p>
-                    </div>
+                    </div> -->
                     <div class="ministry-item">
                         <h3>Intercessão</h3>
                         <p>Equipe dedicada à oração, intercedendo pelas necessidades da igreja, dos membros e da comunidade.</p>
-                        <p class="schedule">Diariamente</p>
+                        <!-- <p class="schedule">Diariamente</p> -->
                     </div>
                 </div>
             </div>
@@ -1188,22 +1222,22 @@
                     <div class="event-card">
                         <div class="event-image"><i class="fas fa-pray"></i></div>
                         <div class="event-info">
-                            <div class="event-date">Todo Domingo | 19h</div>
-                            <h3>Culto da Família</h3>
-                            <p>Celebração semanal com louvor, oração e mensagem bíblica para toda a família.</p>
+                            <div class="event-date">Todo Domingo | 9H e 18H</div>
+                            <!-- <h3>Culto da Família</h3> -->
+                            <p>Celebração dominical com louvor, oração e mensagem bíblica.</p>
                             <span class="event-tag">Culto Principal</span>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="event-image"><i class="fas fa-book-open"></i></div>
                         <div class="event-info">
-                            <div class="event-date">Toda Quarta | 20h</div>
-                            <h3>Estudo Bíblico</h3>
-                            <p>Momento de aprofundamento na Palavra de Deus com estudo sistemático dos livros bíblicos.</p>
+                            <div class="event-date">Toda Quarta | 19:30H</div>
+                            <!-- <h3>Estudo Bíblico</h3> -->
+                            <p>Celebração semanal com louvor, oração e mensagem bíblica.</p>
                             <span class="event-tag">Ensino</span>
                         </div>
                     </div>
-                    <div class="event-card">
+                    <!-- <div class="event-card">
                         <div class="event-image"><i class="fas fa-users"></i></div>
                         <div class="event-info">
                             <div class="event-date">15 de Abril | 19h30</div>
@@ -1211,8 +1245,8 @@
                             <p>Encontro especial para a juventude com louvor, palestras e momentos de comunhão.</p>
                             <span class="event-tag">Juventude</span>
                         </div>
-                    </div>
-                    <div class="event-card">
+                    </div> -->
+                    <!-- <div class="event-card">
                         <div class="event-image"><i class="fas fa-hand-holding-heart"></i></div>
                         <div class="event-info">
                             <div class="event-date">22 de Abril | 9h</div>
@@ -1220,8 +1254,8 @@
                             <p>Distribuição de cestas básicas, roupas e atendimento espiritual para as famílias.</p>
                             <span class="event-tag">Social</span>
                         </div>
-                    </div>
-                    <div class="event-card">
+                    </div> -->
+                    <!-- <div class="event-card">
                         <div class="event-image"><i class="fas fa-drum"></i></div>
                         <div class="event-info">
                             <div class="event-date">29 de Abril | 19h</div>
@@ -1229,8 +1263,8 @@
                             <p>Uma noite inteira dedicada ao louvor e à adoração com toda a equipe de música da igreja.</p>
                             <span class="event-tag">Louvor</span>
                         </div>
-                    </div>
-                    <div class="event-card">
+                    </div> -->
+                    <!-- <div class="event-card">
                         <div class="event-image"><i class="fas fa-ring"></i></div>
                         <div class="event-info">
                             <div class="event-date">06 de Maio | 10h</div>
@@ -1238,7 +1272,7 @@
                             <p>Evento especial para casais com palestras, dinâmicas e momentos de oração.</p>
                             <span class="event-tag">Família</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -1264,19 +1298,19 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>Telefone</h4>
-                                <p>(11) 99999-9999</p>
+                                <p>(21) 96546-8637</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>E-mail</h4>
-                                <p>contato@igrejadapalhada.com.br</p>
+                                <p>--------------</p>
                             </div>
                         </div>
                         <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/pibpalhada/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@pibpalhada9739"><i class="fab fa-youtube"></i></a>
                             <a href="#"><i class="fab fa-facebook"></i></a>
                             <a href="#"><i class="fab fa-spotify"></i></a>
                             <a href="#"><i class="fab fa-whatsapp"></i></a>
@@ -1355,7 +1389,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>Igreja da Palhada</h4>
-                <p>Uma comunidade de fé, amor e serviço. Existimos para glorificar a Deus e abençoar vidas desde 2010.</p>
+                <p>Uma comunidade de fé, amor e serviço. Existimos para glorificar a Deus e abençoar vidas desde ****.</p>
             </div>
             <div class="footer-col">
                 <h4>Links Rápidos</h4>
@@ -1364,28 +1398,29 @@
                     <li><a href="#" onclick="switchTab('sobre')">Sobre Nós</a></li>
                     <li><a href="#" onclick="switchTab('ministerio')">Ministérios</a></li>
                     <li><a href="#" onclick="switchTab('eventos')">Eventos</a></li>
-                    <li><a href="#" onclick="switchTab('linktree')">Árvore de Links</a></li>
+                    <!-- <li><a href="#" onclick="switchTab('linktree')">Árvore de Links</a></li> -->
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contato</h4>
                 <ul>
                     <li><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: #3b82f6;"></i> Rua Velho Cassiano, 132</li>
-                    <li><i class="fas fa-phone" style="margin-right: 0.5rem; color: #3b82f6;"></i> (11) 99999-9999</li>
-                    <li><i class="fas fa-envelope" style="margin-right: 0.5rem; color: #3b82f6;"></i> contato@igrejadapalhada.com.br</li>
+                    <li><i class="fas fa-phone" style="margin-right: 0.5rem; color: #3b82f6;"></i> (21) 96546-8637</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 0.5rem; color: #3b82f6;"></i> 
+                        --------------------------</li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Horários</h4>
                 <ul>
-                    <li>Domingo: 19h</li>
-                    <li>Quarta-feira: 20h</li>
-                    <li>Terça a Domingo: 9h às 21h</li>
+                    <li>Domingo: 9h e 18h</li>
+                    <li>Quarta-feira: 19:30h</li>
+                    <!-- <li>Terça a Domingo: 9h às 21h</li> -->
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Igreja da Palhada. Todos os direitos reservados. | Rua Velho Cassiano, 132 - São Paulo/SP | CNPJ: 12.345.678/0001-99</p>
+            <p>&copy; 2026 Igreja da Palhada. Todos os direitos reservados. | Rua Velho Cassiano, 132 - Nova Iguaçu/RJ | CNPJ:----------------</p>
         </div>
     </footer>
 
@@ -1409,6 +1444,76 @@
             const navbar = document.getElementById('navbar');
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
+
+
+       
+    // Slider de eventos
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.getElementById('slidesTrack');
+        const slides = Array.from(track.children);
+        const nextButton = document.getElementById('nextSlide');
+        const prevButton = document.getElementById('prevSlide');
+        const dots = Array.from(document.querySelectorAll('.dot'));
+        let currentIndex = 0;
+        let autoPlayInterval;
+
+        function updateSlide(index) {
+            track.style.transform = 'translateX(-' + (index * 100) + '%)';
+            dots.forEach((dot, i) => {
+                dot.style.opacity = i === index ? '1' : '0.4';
+            });
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            const newIndex = (currentIndex + 1) % slides.length;
+            updateSlide(newIndex);
+        }
+
+        function prevSlide() {
+            const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide(newIndex);
+        }
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+        }
+
+        // Event listeners
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay(); // Reinicia o timer após clique manual
+        });
+
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                updateSlide(index);
+                startAutoPlay();
+            });
+        });
+
+        // Pausar autoplay quando o mouse estiver sobre o slider
+        const sliderContainer = document.getElementById('eventsSlider');
+        sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+        sliderContainer.addEventListener('mouseleave', startAutoPlay);
+
+        // Iniciar autoplay
+        updateSlide(0);
+        startAutoPlay();
+    });
     </script>
+
+   
 </body>
 </html>
