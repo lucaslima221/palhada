@@ -187,115 +187,6 @@
             border-radius: 2px;
         }
 
-        /* HERO COM FOTO */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: url('fotos/igrejaentrada.jpeg') center/cover no-repeat;
-            /* background: url('https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; */
-            text-align: center;
-            padding: 100px 20px 50px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.8) 100%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 700px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            color: #fff;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 900;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .hero-title span {
-            color: #60a5fa;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            font-weight: 400;
-            color: #cbd5e1;
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.9rem 2.2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background: #2563eb;
-            color: #fff;
-            border-color: #2563eb;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #fff;
-            border-color: rgba(255,255,255,0.6);
-        }
-
-        .btn-outline:hover {
-            background: #fff;
-            color: #1e3a8a;
-            transform: translateY(-3px);
-        }
-
         /* DIRETRIZES COM FOTOS */
         .diretrizes-section {
             padding: 5rem 20px;
@@ -785,7 +676,7 @@
             color: #2563eb;
         }
 
-          /* RODAPÉ */
+        /* RODAPÉ */
         .footer {
             background: #0f172a;
             color: #cbd5e1;
@@ -888,8 +779,8 @@
     <nav class="tab-nav" id="navbar">
         <div class="container">
             <a href="#" class="nav-brand" onclick="switchTab('home')">
-          <img src="fotos/logopibpalhadapng.png" alt="Logo" style="height: 35px; width: auto; vertical-align: middle;">
-              Igreja da Palhada
+                <img src="fotos/logopibpalhadapng.png" alt="Logo" style="height: 35px; width: auto; vertical-align: middle;">
+                Igreja da Palhada
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -907,17 +798,101 @@
 
     <!-- ABA HOME -->
     <div id="home" class="tab-content active">
-        <section class="hero">
-            <div class="hero-content">
-                <!-- <div class="hero-badge">✝️ Comunidade de Fé</div> -->
-                <h1 class="hero-title">Igreja da <span>Palhada</span></h1>
-                <p class="hero-subtitle">Uma comunidade acolhedora dedicada à palavra de Deus, à comunhão fraterna e ao serviço ao próximo desde 2010.</p>
-                <div class="btn-group">
-                    <a href="#" onclick="switchTab('eventos')" class="btn btn-primary">Nossos Eventos</a>
-                    <a href="#" onclick="switchTab('linktree')" class="btn btn-outline">Nossos Links</a>
-                </div>
+        <!-- TARJA 16:9 REDUZIDA COM HORÁRIOS -->
+<!-- TARJA 16:9 REDUZIDA COM HORÁRIOS -->
+<!-- TARJA 16:9 REDUZIDA COM HORÁRIOS -->
+<div style="
+    width: 100%;
+    position: relative;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+    overflow: hidden;
+    margin-top: 80px;
+    margin-bottom: 2rem;
+    aspect-ratio: 16 / 9;
+    max-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:  10rem 10rem 10rem 10rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+">
+    <div style="
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        color: #fff;
+        max-width: 600px;
+    ">
+        <span style="
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        ">⛪ Junte-se a nós</span>
+        
+        <div style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        ">
+            <!-- Domingo -->
+            <div style="
+                background: rgba(255,255,255,0.08);
+                backdrop-filter: blur(5px);
+                padding: 0.8rem 1.4rem;
+                border-radius: 0.8rem;
+                border: 1px solid rgba(255,255,255,0.2);
+                min-width: 160px;
+            ">
+                <i class="fas fa-church" style="font-size: 1.5rem; color: #facc15; display: block; margin-bottom: 0.3rem;"></i>
+                <div style="font-weight: 800; font-size: 1.1rem;">Domingo</div>
+                <div style="font-size: 0.95rem; color: #ddd;">09h <span style="margin:0 5px; color:#facc15;">•</span> 18h</div>
             </div>
-        </section>
+            
+            <!-- Quarta -->
+            <div style="
+                background: rgba(255,255,255,0.08);
+                backdrop-filter: blur(5px);
+                padding: 0.8rem 1.4rem;
+                border-radius: 0.8rem;
+                border: 1px solid rgba(255,255,255,0.2);
+                min-width: 160px;
+            ">
+                <i class="fas fa-pray" style="font-size: 1.5rem; color: #facc15; display: block; margin-bottom: 0.3rem;"></i>
+                <div style="font-weight: 800; font-size: 1.1rem;">Quarta-feira</div>
+                <div style="font-size: 0.95rem; color: #ddd;">20h</div>
+            </div>
+        </div>
+        
+        <a href="#" onclick="switchTab('eventos'); return false;" style="
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37,99,235,0.5);
+        " onmouseover="this.style.background='#1d4ed8'; this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.background='#2563eb'; this.style.transform='translateY(0)'">
+            <i class="fas fa-arrow-right" style="margin-right: 6px;"></i> Ver agenda completa
+        </a>
+    </div>
+</div>
 
         <section class="diretrizes-section">
             <div class="container">
@@ -1004,68 +979,155 @@
                 <p class="section-subtitle">Conheça nossa história e nosso pastor</p>
 
                 <!-- NOSSA HISTÓRIA -->
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem; align-items: center;">
-    <div>
-          <img src="fotos/logopibpalhadapng.png" alt="Logo" class="diretriz-card-img">   
-    </div>
-    <div>
-        <span style="color: #2563eb; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Nossa História</span>
-        <h3 style="font-size: 2rem; font-weight: 800; margin: 0.8rem 0 1.5rem; color: #0f172a;">Uma Jornada de Fé</h3>
-        <p style="color: #475569; line-height: 1.9; margin-bottom: 1rem;">A Igreja da Palhada nasceu do sonho de um pequeno grupo de irmãos que se reuniam na sala da casa da Rua Velho Cassiano, 132. Sem templo, sem recursos, mas com muita fé e disposição, iniciaram uma caminhada que transformaria não apenas suas vidas, mas toda a comunidade ao redor.</p>
-        <p style="color: #475569; line-height: 1.9; margin-bottom: 1rem;">O nome "Palhada" veio do próprio bairro, uma forma de honrar nossas raízes e mostrar que Deus escolhe as coisas simples para confundir as fortes. O primeiro banco foi doado, o primeiro louvor foi cantado à capela, e a primeira oferta foi um pão que alimentou uma família necessitada.</p>
-        <p style="color: #475569; line-height: 1.9;">De 2010 para cá, já celebramos mais de 500 batismos, realizamos dezenas de casamentos, restauramos famílias e vimos o agir de Deus em cada detalhe. Hoje, somos uma igreja viva, pulsante, que continua escrevendo sua história com as mesmas bases do início: fé, amor e serviço.</p>
-    </div>
-</div>
+                <div style="
+                    max-width: 800px;
+                    margin: 0 auto 4rem auto;
+                    background: #ffffff;
+                    border-radius: 1.5rem;
+                    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+                    padding: 3rem 2.5rem;
+                    border: 1px solid #e2e8f0;
+                ">
+                    <span style="
+                        display: block;
+                        text-align: center;
+                        color: #2563eb;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                        font-size: 0.85rem;
+                        margin-bottom: 0.5rem;
+                    ">Nossa História</span>
+                    
+                    <h3 style="
+                        font-size: 2.2rem;
+                        font-weight: 800;
+                        margin: 0 0 1.8rem 0;
+                        color: #0f172a;
+                        text-align: center;
+                        line-height: 1.2;
+                    ">Uma Jornada de Fé</h3>
+                    
+                    <div style="
+                        color: #334155;
+                        line-height: 1.9;
+                        font-size: 1.05rem;
+                        text-align: left;
+                        max-width: 680px;
+                        margin: 0 auto;
+                    ">
+                        <p style="margin-bottom: 1.2rem;">
+                            A Igreja da Palhada nasceu do sonho de um pequeno grupo de irmãos que se reuniam na sala da casa da Rua Velho Cassiano, 132. Sem templo, sem recursos, mas com muita fé e disposição, iniciaram uma caminhada que transformaria não apenas suas vidas, mas toda a comunidade ao redor.
+                        </p>
+                        <p style="margin-bottom: 1.2rem;">
+                            O nome "Palhada" veio do próprio bairro, uma forma de honrar nossas raízes e mostrar que Deus escolhe as coisas simples para confundir as fortes. O primeiro banco foi doado, o primeiro louvor foi cantado à capela, e a primeira oferta foi um pão que alimentou uma família necessitada.
+                        </p>
+                        <p style="margin-bottom: 0;">
+                            De 2010 para cá, já celebramos mais de 500 batismos, realizamos dezenas de casamentos, restauramos famílias e vimos o agir de Deus em cada detalhe. Hoje, somos uma igreja viva, pulsante, que continua escrevendo sua história com as mesmas bases do início: fé, amor e serviço.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- PASTOR -->
-                <div class="pastor-section">
-                    <img src="fotos/prwendel.png" alt="Logo" class="diretriz-card-img">                     <div class="pastor-info">
-                        <h3>Pastor Wendel Soares
-
-                        </h3>
-                        <span class="cargo">Pastor Presidente</span>
-                        <p>O Pastor Wendel está à frente da Igreja da Palhada desde sua fundação, em 2010. Formado em Teologia pelo Seminário Batista e com mais de 25 anos de ministério pastoral, ele tem conduzido nossa comunidade com sabedoria, amor e dedicação à Palavra de Deus.</p>
-                        <p>Casado com a irmã Sandra Soares há 30 anos, Wendel é conhecido por sua pregação calorosa, seu coração acolhedor e sua visão de uma igreja que verdadeiramente transforma vidas. Seu lema é: <em>"Uma igreja que não serve, não serve para nada."</em></p>
-                        <div class="pastor-redes">
-                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <div style="
+                    max-width: 800px;
+                    margin: 0 auto 4rem auto;
+                    background: #ffffff;
+                    border-radius: 1.5rem;
+                    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+                    padding: 3rem 2.5rem;
+                    border: 1px solid #e2e8f0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 2.5rem;
+                ">
+                    <div style="flex: 0 0 180px; text-align: center;">
+                        <img src="fotos/prwendel.png" alt="Pastor Wendel Soares" style="
+                            width: 180px;
+                            height: 180px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+                            border: 4px solid #2563eb;
+                        ">
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="font-size: 1.8rem; font-weight: 800; margin: 0 0 0.2rem; color: #0f172a;">Pastor Wendel Soares</h3>
+                        <span style="
+                            display: inline-block;
+                            background: #2563eb;
+                            color: #fff;
+                            font-size: 0.8rem;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            padding: 0.2rem 1rem;
+                            border-radius: 20px;
+                            margin-bottom: 1.2rem;
+                        ">Pastor Presidente</span>
+                        <p style="color: #475569; line-height: 1.8; margin-bottom: 0.8rem;">O Pastor Wendel está à frente da Igreja da Palhada desde sua fundação, em 2010. Formado em Teologia pelo Seminário Batista e com mais de 25 anos de ministério pastoral, ele tem conduzido nossa comunidade com sabedoria, amor e dedicação à Palavra de Deus.</p>
+                        <p style="color: #475569; line-height: 1.8; margin-bottom: 1rem;">Casado com a irmã Sandra Soares há 30 anos, Wendel é conhecido por sua pregação calorosa, seu coração acolhedor e sua visão de uma igreja que verdadeiramente transforma vidas. Seu lema é: <em>"Uma igreja que não serve, não serve para nada."</em></p>
+                        <div style="display: flex; gap: 0.8rem; font-size: 1.3rem;">
+                            <a href="#" title="Instagram" style="color: #2563eb; transition: 0.2s;"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="Facebook" style="color: #2563eb; transition: 0.2s;"><i class="fab fa-facebook"></i></a>
+                            <a href="#" title="YouTube" style="color: #2563eb; transition: 0.2s;"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- LINHA DO TEMPO -->
-                <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 2rem; color: #0f172a;">Nossa Trajetória</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2010</div>
-                        <h4>Fundação da Igreja da Palhada</h4>
-                        <p>O Pastor José reúne as primeiras 20 famílias na Rua Velho Cassiano, 132, e realiza o primeiro culto oficial.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2013</div>
-                        <h4>Inauguração do Templo</h4>
-                        <p>Após anos de oração e contribuições, inauguramos nosso templo com capacidade para 300 pessoas.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2016</div>
-                        <h4>Início da Ação Social</h4>
-                        <p>Lançamos o programa "Mãos Solidárias", distribuindo cestas básicas e oferecendo assistência espiritual à comunidade.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2019</div>
-                        <h4>Expansão dos Ministérios</h4>
-                        <p>Criação dos ministérios de Jovens, Infantil e Pequenos Grupos, ampliando nosso alcance.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <h4>500 Membros</h4>
-                        <p>Alcançamos a marca de 500 membros ativos e continuamos crescendo na graça e no conhecimento.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <h4>Novos Projetos</h4>
-                        <p>Lançamento da Conferência de Jovens anual e expansão das Células para mais bairros.</p>
+                <div style="max-width: 800px; margin: 0 auto 4rem auto;">
+                    <h3 style="
+                        font-size: 1.8rem;
+                        font-weight: 800;
+                        margin-bottom: 2.5rem;
+                        color: #0f172a;
+                        text-align: center;
+                    ">Nossa Trajetória</h3>
+                    
+                    <div style="
+                        position: relative;
+                        padding-left: 40px;
+                        border-left: 2px solid #2563eb;
+                        margin-left: 20px;
+                    ">
+                        <div style="position: relative; margin-bottom: 2.5rem;">
+                            <div style="position: absolute; left: -49px; top: 0; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #2563eb;"></div>
+                            <span style="font-weight: 800; color: #2563eb; font-size: 1rem; display: block; margin-bottom: 0.3rem;">2010</span>
+                            <h4 style="margin: 0 0 0.3rem; font-size: 1.2rem; color: #0f172a;">Fundação da Igreja da Palhada</h4>
+                            <p style="margin: 0; color: #475569; line-height: 1.7;">O Pastor José reúne as primeiras 20 famílias na Rua Velho Cassiano, 132, e realiza o primeiro culto oficial.</p>
+                        </div>
+                        <div style="position: relative; margin-bottom: 2.5rem;">
+                            <div style="position: absolute; left: -49px; top: 0; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #2563eb;"></div>
+                            <span style="font-weight: 800; color: #2563eb; font-size: 1rem; display: block; margin-bottom: 0.3rem;">2013</span>
+                            <h4 style="margin: 0 0 0.3rem; font-size: 1.2rem; color: #0f172a;">Inauguração do Templo</h4>
+                            <p style="margin: 0; color: #475569; line-height: 1.7;">Após anos de oração e contribuições, inauguramos nosso templo com capacidade para 300 pessoas.</p>
+                        </div>
+                        <div style="position: relative; margin-bottom: 2.5rem;">
+                            <div style="position: absolute; left: -49px; top: 0; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #2563eb;"></div>
+                            <span style="font-weight: 800; color: #2563eb; font-size: 1rem; display: block; margin-bottom: 0.3rem;">2016</span>
+                            <h4 style="margin: 0 0 0.3rem; font-size: 1.2rem; color: #0f172a;">Início da Ação Social</h4>
+                            <p style="margin: 0; color: #475569; line-height: 1.7;">Lançamos o programa "Mãos Solidárias", distribuindo cestas básicas e oferecendo assistência espiritual à comunidade.</p>
+                        </div>
+                        <div style="position: relative; margin-bottom: 2.5rem;">
+                            <div style="position: absolute; left: -49px; top: 0; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #2563eb;"></div>
+                            <span style="font-weight: 800; color: #2563eb; font-size: 1rem; display: block; margin-bottom: 0.3rem;">2019</span>
+                            <h4 style="margin: 0 0 0.3rem; font-size: 1.2rem; color: #0f172a;">Expansão dos Ministérios</h4>
+                            <p style="margin: 0; color: #475569; line-height: 1.7;">Criação dos ministérios de Jovens, Infantil e Pequenos Grupos, ampliando nosso alcance.</p>
+                        </div>
+                        <div style="position: relative; margin-bottom: 2.5rem;">
+                            <div style="position: absolute; left: -49px; top: 0; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #2563eb;"></div>
+                            <span style="font-weight: 800; color: #2563eb; font-size: 1rem; display: block; margin-bottom: 0.3rem;">2023</span>
+                            <h4 style="margin: 0 0 0.3rem; font-size: 1.2rem; color: #0f172a;">500 Membros</h4>
+                            <p style="margin: 0; color: #475569; line-height: 1.7;">Alcançamos a marca de 500 membros ativos e continuamos crescendo na graça e no conhecimento.</p>
+                        </div>
+                        <div style="position: relative; margin-bottom: 0;">
+                            <div style="position: absolute; left: -49px; top: 0; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #2563eb;"></div>
+                            <span style="font-weight: 800; color: #2563eb; font-size: 1rem; display: block; margin-bottom: 0.3rem;">2024</span>
+                            <h4 style="margin: 0 0 0.3rem; font-size: 1.2rem; color: #0f172a;">Novos Projetos</h4>
+                            <p style="margin: 0; color: #475569; line-height: 1.7;">Lançamento da Conferência de Jovens anual e expansão das Células para mais bairros.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1239,7 +1301,8 @@
         <section class="section-page section-alt">
             <div class="container">
                 <div class="linktree-header">
-                    <img src="fotos/logopibpalhadapng.png" alt="Logo" class="linktree-avatar">                    <h3>Igreja da Palhada</h3>
+                    <img src="fotos/logopibpalhadapng.png" alt="Logo" class="linktree-avatar">
+                    <h3>Igreja da Palhada</h3>
                     <p>Todos os nossos links em um só lugar</p>
                 </div>
                 <div class="linktree-container">
@@ -1348,4 +1411,4 @@
         });
     </script>
 </body>
-                    </html>
+</html>
